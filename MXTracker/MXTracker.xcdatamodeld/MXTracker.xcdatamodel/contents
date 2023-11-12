@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MaintenanceRecord" representedClassName="MaintenanceRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCompleted" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="logTitle" optional="YES" attributeType="String"/>
+        <attribute name="mileageCompleted" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="serviceInterval" optional="YES" attributeType="String"/>
+        <attribute name="workPerformed" optional="YES" attributeType="String"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserVehicle" inverseName="maintenanceRecords" inverseEntity="UserVehicle"/>
+    </entity>
+    <entity name="UserVehicle" representedClassName="UserVehicle" syncable="YES" codeGenerationType="class">
+        <attribute name="cylinders" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="displacement" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="drive" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="trim" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="maintenanceRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MaintenanceRecord" inverseName="vehicle" inverseEntity="MaintenanceRecord"/>
+        <relationship name="vehicleReminders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VehicleReminder" inverseName="vehicle" inverseEntity="VehicleReminder"/>
+    </entity>
+    <entity name="VehicleReminder" representedClassName="VehicleReminder" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCompleted" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nextServiceDue" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pushNotificationsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reminderTitle" optional="YES" attributeType="String"/>
+        <attribute name="serviceInterval" optional="YES" attributeType="String"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserVehicle" inverseName="vehicleReminders" inverseEntity="UserVehicle"/>
+    </entity>
+</model>

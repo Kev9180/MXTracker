@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705EBB72AE60DD200221AFD /* BindingExtension.swift */; };
+		7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */; };
+		7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F62AE1A6EF005AD46D /* ContentView.swift */; };
+		7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7762C3F82AE1A6F0005AD46D /* Assets.xcassets */; };
+		7762C3FC2AE1A6F0005AD46D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7762C3FB2AE1A6F0005AD46D /* Preview Assets.xcassets */; };
+		7762C3FE2AE1A6F0005AD46D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3FD2AE1A6F0005AD46D /* Persistence.swift */; };
+		7762C4012AE1A6F0005AD46D /* MXTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3FF2AE1A6F0005AD46D /* MXTracker.xcdatamodeld */; };
+		7762C40A2AE1B40F005AD46D /* MyVehiclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4092AE1B40F005AD46D /* MyVehiclesView.swift */; };
+		7762C40C2AE1B560005AD46D /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C40B2AE1B560005AD46D /* VehicleModel.swift */; };
+		7762C40E2AE1B569005AD46D /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C40D2AE1B569005AD46D /* VehicleViewModel.swift */; };
+		7762C4102AE1BA80005AD46D /* AddNewVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C40F2AE1BA80005AD46D /* AddNewVehicleView.swift */; };
+		7762C4142AE20B6F005AD46D /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4132AE20B6E005AD46D /* VehicleDetailsView.swift */; };
+		7762C4162AE2257C005AD46D /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4152AE2257C005AD46D /* RecordModel.swift */; };
+		7762C4182AE2259C005AD46D /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4172AE2259C005AD46D /* ReminderModel.swift */; };
+		7762C41A2AE225BE005AD46D /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4192AE225BE005AD46D /* RecordViewModel.swift */; };
+		7762C41C2AE225CA005AD46D /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C41B2AE225CA005AD46D /* ReminderViewModel.swift */; };
+		7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C41D2AE34211005AD46D /* MXLogView.swift */; };
+		7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */; };
+		7762C4222AE35B22005AD46D /* AddNewMXRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */; };
+		7762C4242AE37CDA005AD46D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4232AE37CDA005AD46D /* MapView.swift */; };
+		77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF58B42AE46C0C0031EF59 /* LocationManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7705EBB72AE60DD200221AFD /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
+		7762C3F12AE1A6EF005AD46D /* MXTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXTrackerApp.swift; sourceTree = "<group>"; };
+		7762C3F62AE1A6EF005AD46D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7762C3F82AE1A6F0005AD46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7762C3FB2AE1A6F0005AD46D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7762C3FD2AE1A6F0005AD46D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7762C4002AE1A6F0005AD46D /* MXTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MXTracker.xcdatamodel; sourceTree = "<group>"; };
+		7762C4092AE1B40F005AD46D /* MyVehiclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVehiclesView.swift; sourceTree = "<group>"; };
+		7762C40B2AE1B560005AD46D /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		7762C40D2AE1B569005AD46D /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
+		7762C40F2AE1BA80005AD46D /* AddNewVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVehicleView.swift; sourceTree = "<group>"; };
+		7762C4132AE20B6E005AD46D /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
+		7762C4152AE2257C005AD46D /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		7762C4172AE2259C005AD46D /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
+		7762C4192AE225BE005AD46D /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		7762C41B2AE225CA005AD46D /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		7762C41D2AE34211005AD46D /* MXLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXLogView.swift; sourceTree = "<group>"; };
+		7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXLogVehicleView.swift; sourceTree = "<group>"; };
+		7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMXRecordView.swift; sourceTree = "<group>"; };
+		7762C4232AE37CDA005AD46D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		77BF58B42AE46C0C0031EF59 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7762C3EE2AE1A6EF005AD46D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7762C3E82AE1A6EF005AD46D = {
+			isa = PBXGroup;
+			children = (
+				7762C3F32AE1A6EF005AD46D /* MXTracker */,
+				7762C3F22AE1A6EF005AD46D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7762C3F22AE1A6EF005AD46D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7762C3F12AE1A6EF005AD46D /* MXTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7762C3F32AE1A6EF005AD46D /* MXTracker */ = {
+			isa = PBXGroup;
+			children = (
+				7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */,
+				7762C3F62AE1A6EF005AD46D /* ContentView.swift */,
+				7762C4092AE1B40F005AD46D /* MyVehiclesView.swift */,
+				7762C40F2AE1BA80005AD46D /* AddNewVehicleView.swift */,
+				7762C4132AE20B6E005AD46D /* VehicleDetailsView.swift */,
+				7762C40B2AE1B560005AD46D /* VehicleModel.swift */,
+				7762C40D2AE1B569005AD46D /* VehicleViewModel.swift */,
+				7762C41D2AE34211005AD46D /* MXLogView.swift */,
+				7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */,
+				7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */,
+				7762C4232AE37CDA005AD46D /* MapView.swift */,
+				77BF58B42AE46C0C0031EF59 /* LocationManager.swift */,
+				7762C4152AE2257C005AD46D /* RecordModel.swift */,
+				7762C4192AE225BE005AD46D /* RecordViewModel.swift */,
+				7762C4172AE2259C005AD46D /* ReminderModel.swift */,
+				7762C41B2AE225CA005AD46D /* ReminderViewModel.swift */,
+				7705EBB72AE60DD200221AFD /* BindingExtension.swift */,
+				7762C3F82AE1A6F0005AD46D /* Assets.xcassets */,
+				7762C3FD2AE1A6F0005AD46D /* Persistence.swift */,
+				7762C3FF2AE1A6F0005AD46D /* MXTracker.xcdatamodeld */,
+				7762C3FA2AE1A6F0005AD46D /* Preview Content */,
+			);
+			path = MXTracker;
+			sourceTree = "<group>";
+		};
+		7762C3FA2AE1A6F0005AD46D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7762C3FB2AE1A6F0005AD46D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7762C3F02AE1A6EF005AD46D /* MXTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7762C4042AE1A6F0005AD46D /* Build configuration list for PBXNativeTarget "MXTracker" */;
+			buildPhases = (
+				7762C3ED2AE1A6EF005AD46D /* Sources */,
+				7762C3EE2AE1A6EF005AD46D /* Frameworks */,
+				7762C3EF2AE1A6EF005AD46D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MXTracker;
+			productName = MXTracker;
+			productReference = 7762C3F12AE1A6EF005AD46D /* MXTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7762C3E92AE1A6EF005AD46D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7762C3F02AE1A6EF005AD46D = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 7762C3EC2AE1A6EF005AD46D /* Build configuration list for PBXProject "MXTracker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7762C3E82AE1A6EF005AD46D;
+			productRefGroup = 7762C3F22AE1A6EF005AD46D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7762C3F02AE1A6EF005AD46D /* MXTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7762C3EF2AE1A6EF005AD46D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7762C3FC2AE1A6F0005AD46D /* Preview Assets.xcassets in Resources */,
+				7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7762C3ED2AE1A6EF005AD46D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7762C41C2AE225CA005AD46D /* ReminderViewModel.swift in Sources */,
+				7762C4142AE20B6F005AD46D /* VehicleDetailsView.swift in Sources */,
+				7762C41A2AE225BE005AD46D /* RecordViewModel.swift in Sources */,
+				7762C40C2AE1B560005AD46D /* VehicleModel.swift in Sources */,
+				7762C3FE2AE1A6F0005AD46D /* Persistence.swift in Sources */,
+				7762C40A2AE1B40F005AD46D /* MyVehiclesView.swift in Sources */,
+				7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */,
+				7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */,
+				7762C4182AE2259C005AD46D /* ReminderModel.swift in Sources */,
+				7762C40E2AE1B569005AD46D /* VehicleViewModel.swift in Sources */,
+				7762C4162AE2257C005AD46D /* RecordModel.swift in Sources */,
+				77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */,
+				7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */,
+				7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */,
+				7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */,
+				7762C4242AE37CDA005AD46D /* MapView.swift in Sources */,
+				7762C4012AE1A6F0005AD46D /* MXTracker.xcdatamodeld in Sources */,
+				7762C4102AE1BA80005AD46D /* AddNewVehicleView.swift in Sources */,
+				7762C4222AE35B22005AD46D /* AddNewMXRecordView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7762C4022AE1A6F0005AD46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7762C4032AE1A6F0005AD46D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7762C4052AE1A6F0005AD46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MXTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for locating nearby automotive parts stores.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = asu.MXTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7762C4062AE1A6F0005AD46D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MXTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for locating nearby automotive parts stores.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = asu.MXTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7762C3EC2AE1A6EF005AD46D /* Build configuration list for PBXProject "MXTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7762C4022AE1A6F0005AD46D /* Debug */,
+				7762C4032AE1A6F0005AD46D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7762C4042AE1A6F0005AD46D /* Build configuration list for PBXNativeTarget "MXTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7762C4052AE1A6F0005AD46D /* Debug */,
+				7762C4062AE1A6F0005AD46D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7762C3FF2AE1A6F0005AD46D /* MXTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7762C4002AE1A6F0005AD46D /* MXTracker.xcdatamodel */,
+			);
+			currentVersion = 7762C4002AE1A6F0005AD46D /* MXTracker.xcdatamodel */;
+			path = MXTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7762C3E92AE1A6EF005AD46D /* Project object */;
+}
