@@ -47,9 +47,7 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0]
-        print(userLocation.coordinate.latitude)
-        print(userLocation.coordinate.longitude)
+        let _:CLLocation = locations[0]
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

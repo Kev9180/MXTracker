@@ -40,7 +40,12 @@ struct MapView: View {
             switch locationDataManager.locationManager.authorizationStatus {
             case .authorizedWhenInUse:  //When the user has allowed location services
                 
-                //*****TODO****** Need to figure out how to make this map conform to iOS 17 requirements
+                //*****TODO****** Need to figure out how to make this map conform to iOS 17 requirements. Getting the following errors: "'init(coordinateRegion:interactionModes:showsUserLocation:userTrackingMode:annotationItems:annotationContent:)' was deprecated in iOS 17.0: Use Map initializers that take a MapContentBuilder instead." and "'MapAnnotation' was deprecated in iOS 17.0: Use Annotation along with Map initializers that take a MapContentBuilder instead."
+                
+                //*****TODO****** Need to implement map zoom in/out
+                
+                //*****TODO****** Need to fix it so that the user can drag and move the map without getting the warning: "Modifying state during view update, this will cause undefined behavior."
+                
                 
                 //Show a map based off of the users current location
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: markers) { store in
@@ -62,13 +67,9 @@ struct MapView: View {
                      }
                 }
                 //If the user's location changes, update the userLocation variable and the region
-                .onChange(of: locationDataManager.locationManager.location) { previousLoc, currentLoc in
-                    if let locationCoordinate = currentLoc?.coordinate {
-                        DispatchQueue.main.async {
-                            self.userLocation = locationCoordinate
-                            self.region.center = locationCoordinate
-                        }
-                    }
+                .onChange(of: locationDataManager.locationManager.location) {
+                    // Assuming updateRegion function uses current location from locationDataManager
+                    updateRegion()
                 }
                 
             case .restricted, .denied:  //Location services currently unavailable.
@@ -84,6 +85,39 @@ struct MapView: View {
             DispatchQueue.main.async {
                 self.getNearbyPartsStores()
             }
+        }
+        
+        HStack {
+            Spacer()
+            Button("Zoom In") {
+                zoomInMap()
+            }
+            Spacer()
+            Button("Zoom Out") {
+                zoomOutMap()
+            }
+            Spacer()
+        }
+    }
+    
+    //
+    func zoomInMap() {
+        region.span.latitudeDelta /= 2.0
+        region.span.longitudeDelta /= 2.0
+    }
+
+    //
+    func zoomOutMap() {
+        region.span.latitudeDelta *= 2.0
+        region.span.longitudeDelta *= 2.0
+    }
+    
+    //
+    func updateRegion() {
+        guard let locationCoordinate = locationDataManager.locationManager.location?.coordinate else { return }
+        DispatchQueue.main.async {
+            self.userLocation = locationCoordinate
+            self.region.center = locationCoordinate
         }
     }
 

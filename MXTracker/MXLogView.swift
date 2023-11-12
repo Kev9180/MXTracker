@@ -56,6 +56,7 @@ struct MXLogView: View {
                         .fontWeight(.medium)
                         .fontDesign(.rounded)
                         .multilineTextAlignment(.center)
+                        .frame(alignment: .center)
                 } else {
                     //Iterate through each of the vehicles in the list
                     ForEach(vehicleVM.vehiclesList, id: \.id) {vehicle in

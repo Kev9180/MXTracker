@@ -114,9 +114,8 @@ struct ContentView: View {
                             .fontDesign(.rounded)
                         
                         //Reminders button
-                        Button {
-                            //**TODO** Still need to implement the reminders pages and funtionality along with the push notification service.
-                            
+                        NavigationLink {
+                            MyRemindersView(vehicleVM: vehicleVM)
                         } label: {
                             ZStack {
                                 Rectangle()

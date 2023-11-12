@@ -1,33 +1,33 @@
 //
-//  MXLogVehicleView.swift
+//  VehicleRemindersView.swift
 //  MXTracker
 //
-//  Created by Kevin Johnston on 10/20/23.
+//  Created by Kevin Johnston on 11/11/23.
 //
 
 import SwiftUI
 
-struct MXLogVehicleView: View {
+struct VehicleRemindersView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var vehicle: UserVehicle?
-    @ObservedObject var recordVM = RecordViewModel()
+    @ObservedObject var reminderVM = ReminderViewModel()
 
-    //Main view that handles the logic for displaying the UI elements for each vehicle's maintenance records
+    //Main view that handles the logic for displaying the UI elements for each vehicle's active reminders
     var body: some View {
         VStack {
             Spacer()
             
             //Image logo
-            Image(systemName: "pencil.and.list.clipboard.rtl")
+            Image(systemName: "bell.badge")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .foregroundStyle(Color("MXBlue"))
+                .foregroundStyle(Color("MXOrange"))
             
             Spacer()
             
             //Screen title
-            Text("MX Log")
+            Text("Reminders")
                 .font(.system(size: 48))
                 .foregroundStyle(Color("MXPurple"))
                 .fontWeight(.bold)
@@ -44,25 +44,21 @@ struct MXLogVehicleView: View {
             
             //Display the records for this vehicle
             List {
-                //Check if the vehicle has any maintenance records that have been added
-                if let maintenanceRecords = vehicle?.maintenanceRecords as? Set<MaintenanceRecord>, !maintenanceRecords.isEmpty {
-                    //Convert the set of records to an array and then display each of the records
-                    ForEach(Array(maintenanceRecords), id: \.id) { record in
-                        NavigationLink(destination: MXRecordDetailView(vehicle: vehicle, record: record)) {
+                //Check if the vehicle has any active reminders that have been added
+                if let vehicleReminders = vehicle?.vehicleReminders as? Set<VehicleReminder>, !vehicleReminders.isEmpty {
+                    //Convert the set of reminders to an array and then display each of the records
+                    ForEach(Array(vehicleReminders), id: \.id) { reminder in
+                        NavigationLink(destination: ReminderDetailsView()) {
                             HStack {
-                                Text("\(record.dateCompleted ?? "")")
+                                Text("\(reminder.reminderTitle ?? "")")
                                     .fontWeight(.semibold)
                                     .frame(alignment: .leading)
-                                Spacer()
-                                Text("\(record.logTitle ?? "")")
-                                    .foregroundStyle(Color("MXBlue"))
-                                    .frame(alignment: .trailing)
                             }
                         }
                     }
-                    .onDelete(perform: deleteRecord)
+                    .onDelete(perform: deleteReminder)
                 } else {
-                    Text("No maintenance records found for this vehicle! Add one now to get started!")
+                    Text("No active reminders found for this vehicle! Add one now to get started!")
                         .font(.system(size: 24))
                         .foregroundStyle(Color.red)
                         .fontWeight(.medium)
@@ -71,20 +67,23 @@ struct MXLogVehicleView: View {
                 }
             }
             .scrollContentBackground(.hidden)
+            .onAppear{
+                reminderVM.fetchReminders()
+            }
             
             Spacer()
             
             //Add New Record Button
             NavigationLink {
-                //Take the user to the AddNewMXRecordView
-                AddNewMXRecordView(vehicle: $vehicle)
+                //Take the user to the AddNewReminderView
+                AddNewReminderView(vehicle: $vehicle)
             } label: {
                 HStack {
                     Image(systemName: "plus.circle")
-                    Text("Add New Record")
+                    Text("Add New Reminder")
                 }
             } //Format the button's appearance
-            .frame(width: 260, height: 30)
+            .frame(width: 290, height: 30)
             .padding()
             .font(.title)
             .fontWeight(.semibold)
@@ -109,20 +108,20 @@ struct MXLogVehicleView: View {
     }
     
     //Function that calculates the index of the vehicle and then calls the deleteVehicle function in VehicleViewModel to delete the vehicle
-    func deleteRecord(at offsets: IndexSet) {
-        if let maintenanceRecords = vehicle?.maintenanceRecords as? Set<MaintenanceRecord> {
-            let recordsArray = Array(maintenanceRecords)
+    func deleteReminder(at offsets: IndexSet) {
+        if let vehicleReminders = vehicle?.vehicleReminders as? Set<VehicleReminder> {
+            let remindersArray = Array(vehicleReminders)
 
             for index in offsets {
-                let recordToDelete = recordsArray[index]
-                recordVM.deleteRecord(recordToDelete)
+                let reminderToDelete = remindersArray[index]
+                reminderVM.deleteReminder(reminderToDelete)
             }
 
-            vehicle?.removeFromMaintenanceRecords(recordsArray[offsets.first!])
+            vehicle?.removeFromVehicleReminders(remindersArray[offsets.first!])
         }
     }
 }
 
 #Preview {
-    MXLogVehicleView()
+    VehicleRemindersView()
 }

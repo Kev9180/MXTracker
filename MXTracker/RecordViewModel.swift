@@ -29,7 +29,7 @@ public class RecordViewModel: ObservableObject {
         }
     }
     
-    //Function to delete a previously-added UserVehicle entity
+    //Function to delete a previously-added MaintenanaceRecord entity
     func deleteRecord(_ record: MaintenanceRecord) {
         viewContext.delete(record)
 

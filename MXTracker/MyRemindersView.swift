@@ -1,14 +1,14 @@
 //
-//  MyVehiclesView.swift
+//  MyRemindersView.swift
 //  MXTracker
 //
-//  Created by Kevin Johnston on 10/19/23.
+//  Created by Kevin Johnston on 11/11/23.
 //
 
 import SwiftUI
 
-struct MyVehiclesView: View {
-    @ObservedObject var vehicleVM = VehicleViewModel()
+struct MyRemindersView: View {
+    @ObservedObject var vehicleVM: VehicleViewModel
     @Environment(\.presentationMode) var presentationMode
     
     //Main view that displays the UI elements and handles the logic for those elements
@@ -17,16 +17,16 @@ struct MyVehiclesView: View {
             Spacer()
             
             //Image logo
-            Image(systemName: "car")
+            Image(systemName: "bell.badge")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .foregroundStyle(Color.red)
+                .foregroundStyle(Color("MXOrange"))
             
             Spacer()
             
             //Screen title
-            Text("My Vehicles")
+            Text("Reminders")
                 .font(.system(size: 48))
                 .foregroundStyle(Color("MXPurple"))
                 .fontWeight(.bold)
@@ -34,10 +34,21 @@ struct MyVehiclesView: View {
             
             Spacer()
             
+            //Screen instruction prompt
+            Text("Select a vehicle from your list to see active reminders")
+                .font(.system(size: 24))
+                .foregroundStyle(Color.black)
+                .fontWeight(.medium)
+                .fontDesign(.rounded)
+                .multilineTextAlignment(.center)
+                .padding(.leading)
+                .padding(.trailing)
+            
+            Spacer()
+            
             //Vehicles List
             List {
                 
-                //If there are no vehicles in the list, alert the user to add a vehicle
                 if vehicleVM.vehiclesList.count == 0 {
                     Text("There are no vehicles in your list. Add one now to get started!")
                         .font(.system(size: 24))
@@ -45,17 +56,15 @@ struct MyVehiclesView: View {
                         .fontWeight(.medium)
                         .fontDesign(.rounded)
                         .multilineTextAlignment(.center)
-                        .frame(alignment: .center)
                 } else {
                     //Iterate through each of the vehicles in the list
                     ForEach(vehicleVM.vehiclesList, id: \.id) {vehicle in
                         
-                        //Create a navigationlink for each vehicle that will go to the VehicleDetailsView when clicked
-                        NavigationLink(destination: VehicleDetailsView(vehicle: vehicle)) {
+                        //Create a navigationlink for each vehicle that will go to the MXLogVehicleView when clicked
+                        NavigationLink(destination: VehicleRemindersView()) {
                             Text("\(vehicle.year ?? "Year") \(vehicle.make ?? "Make") \(vehicle.model ?? "Model")")
                         }
                     }
-                    .onDelete(perform: deleteVehicle)
                 }
             }
             .scrollContentBackground(.hidden)
@@ -94,17 +103,11 @@ struct MyVehiclesView: View {
             }
         )
     }
-    
-    //Function that calculates the index of the vehicle and then calls the deleteVehicle function in VehicleViewModel to delete the vehicle
-    func deleteVehicle(at offsets: IndexSet) {
-        for index in offsets {
-            let vehicle = vehicleVM.vehiclesList[index]
-            vehicleVM.deleteVehicle(vehicle)
-        }
-        vehicleVM.fetchVehicles() //Refresh the vehiclesList
-    }
 }
 
-#Preview {
-    MyVehiclesView()
+struct MyRemindersView_Previews: PreviewProvider {
+    static var previews: some View {
+        let vehicleVM = VehicleViewModel()
+        MyRemindersView(vehicleVM: vehicleVM)
+    }
 }

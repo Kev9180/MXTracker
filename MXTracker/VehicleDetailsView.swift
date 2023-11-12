@@ -46,63 +46,78 @@ struct VehicleDetailsView: View {
                 HStack {
                     Text("Year:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.year ?? "")")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
                 HStack {
                     Text("Make:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.make ?? "")")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
                 HStack {
                     Text("Model:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.model ?? "")")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
                 HStack {
                     Text("Trim:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.trim ?? "")")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
                 HStack {
                     Text("Engine Displacement (L):")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     if let displacement = vehicle?.displacement {
                         let formattedDisplacement = String(format: "%.1f", displacement)
                         Text(formattedDisplacement)
                             .padding(.trailing)
+                            .foregroundStyle(Color("MXBlue"))
                     } else {
                         Text("Error")
                             .padding(.trailing)
+                            .foregroundStyle(Color("MXBlue"))
                     }
                 }
                 Divider()
                 HStack {
                     Text("Cylinders:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.cylinders ?? 0)")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
                 HStack {
                     Text("Drive:")
                         .padding(.leading)
+                        .fontWeight(.semibold)
                     Spacer()
                     Text("\(vehicle?.drive ?? "")")
                         .padding(.trailing)
+                        .foregroundStyle(Color("MXBlue"))
                 }
                 Divider()
             }
@@ -136,8 +151,7 @@ struct VehicleDetailsView: View {
             //View Reminders Button
             NavigationLink {
                 //Take the user to the reminders for this vehicle
-                
-                //***TODO*** still need to implement reminders functionality
+                VehicleRemindersView(vehicle: vehicle)
                 
             } label: {
                 HStack {

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705EBB72AE60DD200221AFD /* BindingExtension.swift */; };
 		773601C22B006ECB00FE1041 /* MXRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */; };
+		773601C42B007F3600FE1041 /* MyRemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C32B007F3600FE1041 /* MyRemindersView.swift */; };
+		773601C62B00826E00FE1041 /* VehicleRemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C52B00826E00FE1041 /* VehicleRemindersView.swift */; };
+		773601C82B0085A700FE1041 /* AddNewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C72B0085A700FE1041 /* AddNewReminderView.swift */; };
+		773601CA2B00865600FE1041 /* ReminderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C92B00865600FE1041 /* ReminderDetailsView.swift */; };
 		7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */; };
 		7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F62AE1A6EF005AD46D /* ContentView.swift */; };
 		7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7762C3F82AE1A6F0005AD46D /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 /* Begin PBXFileReference section */
 		7705EBB72AE60DD200221AFD /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 		773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXRecordDetailView.swift; sourceTree = "<group>"; };
+		773601C32B007F3600FE1041 /* MyRemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRemindersView.swift; sourceTree = "<group>"; };
+		773601C52B00826E00FE1041 /* VehicleRemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRemindersView.swift; sourceTree = "<group>"; };
+		773601C72B0085A700FE1041 /* AddNewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderView.swift; sourceTree = "<group>"; };
+		773601C92B00865600FE1041 /* ReminderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailsView.swift; sourceTree = "<group>"; };
 		7762C3F12AE1A6EF005AD46D /* MXTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXTrackerApp.swift; sourceTree = "<group>"; };
 		7762C3F62AE1A6EF005AD46D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,10 +106,14 @@
 				7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */,
 				773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */,
 				7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */,
-				7762C4232AE37CDA005AD46D /* MapView.swift */,
-				77BF58B42AE46C0C0031EF59 /* LocationManager.swift */,
 				7762C4152AE2257C005AD46D /* RecordModel.swift */,
 				7762C4192AE225BE005AD46D /* RecordViewModel.swift */,
+				7762C4232AE37CDA005AD46D /* MapView.swift */,
+				77BF58B42AE46C0C0031EF59 /* LocationManager.swift */,
+				773601C32B007F3600FE1041 /* MyRemindersView.swift */,
+				773601C52B00826E00FE1041 /* VehicleRemindersView.swift */,
+				773601C92B00865600FE1041 /* ReminderDetailsView.swift */,
+				773601C72B0085A700FE1041 /* AddNewReminderView.swift */,
 				7762C4172AE2259C005AD46D /* ReminderModel.swift */,
 				7762C41B2AE225CA005AD46D /* ReminderViewModel.swift */,
 				7705EBB72AE60DD200221AFD /* BindingExtension.swift */,
@@ -197,6 +209,8 @@
 				7762C40C2AE1B560005AD46D /* VehicleModel.swift in Sources */,
 				7762C3FE2AE1A6F0005AD46D /* Persistence.swift in Sources */,
 				7762C40A2AE1B40F005AD46D /* MyVehiclesView.swift in Sources */,
+				773601C82B0085A700FE1041 /* AddNewReminderView.swift in Sources */,
+				773601C42B007F3600FE1041 /* MyRemindersView.swift in Sources */,
 				7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */,
 				7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */,
 				7762C4182AE2259C005AD46D /* ReminderModel.swift in Sources */,
@@ -205,8 +219,10 @@
 				77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */,
 				7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */,
 				773601C22B006ECB00FE1041 /* MXRecordDetailView.swift in Sources */,
+				773601C62B00826E00FE1041 /* VehicleRemindersView.swift in Sources */,
 				7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */,
 				7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */,
+				773601CA2B00865600FE1041 /* ReminderDetailsView.swift in Sources */,
 				7762C4242AE37CDA005AD46D /* MapView.swift in Sources */,
 				7762C4012AE1A6F0005AD46D /* MXTracker.xcdatamodeld in Sources */,
 				7762C4102AE1BA80005AD46D /* AddNewVehicleView.swift in Sources */,
