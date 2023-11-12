@@ -6,27 +6,13 @@
 //
 
 import Foundation
+import CoreData
 
-////Define the Vehicle struct
-//struct Vehicle: Identifiable {
-//    var id = UUID()
-//    var year = String()
-//    var make = String()
-//    var model = String()
-//    var trim = String()
-//    var displacement = Double()
-//    var cylinders = Int()
-//    var drive = String()
-//    var records = [MaintenanceRecord]()
-//    var reminders = [VehicleReminder]()
-//}
-
-//
+//VehicleModel class handles creating a new CoreData UserVehicle entity
 class VehicleModel {
-    
     let viewContext = PersistenceController.shared.container.viewContext
     
-    //Function to create a new ActivityEntry entity
+    //Function to create a new UserVehicle entity
     func addNewVehicle(year: String, make: String, model: String, trim: String, displacement: Double, cylinders: Int, drive: String) -> UserVehicle {
         let newVehicle = UserVehicle(context: viewContext)
         newVehicle.id = UUID()

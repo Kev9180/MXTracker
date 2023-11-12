@@ -7,25 +7,14 @@
 
 import Foundation
 
-////Define the Maintenance Record structure
-//struct MaintenanceRecord: Identifiable {
-//    var id = UUID()
-//    var dateCompleted = String()
-//    var mileageCompleted = Int()
-//    var workPerformed = String()
-//    var serviceInterval = String()
-//    var logTitle = String()
-//}
-
 //
 class RecordModel {
-    
     let viewContext = PersistenceController.shared.container.viewContext
     
-    //Function to create a new ActivityEntry entity
+    //Function to create a new CoreData MaintenanceRecord entity
     func addNewRecord(dateCompleted: String, mileageCompleted: Int, workPerformed: String, serviceInterval: String, logTitle: String) -> MaintenanceRecord {
-        
         let newRecord = MaintenanceRecord(context: viewContext)
+        newRecord.id = UUID()
         newRecord.dateCompleted = dateCompleted
         newRecord.mileageCompleted = Int64(mileageCompleted)
         newRecord.workPerformed = workPerformed

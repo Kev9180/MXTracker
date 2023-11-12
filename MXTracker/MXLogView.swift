@@ -60,8 +60,8 @@ struct MXLogView: View {
                     //Iterate through each of the vehicles in the list
                     ForEach(vehicleVM.vehiclesList, id: \.id) {vehicle in
                         
-                        //Create a navigationlink for each vehicle that will go to the VehicleDetailsView when clicked
-                        NavigationLink(destination: VehicleDetailsView(vehicle: vehicle)) {
+                        //Create a navigationlink for each vehicle that will go to the MXLogVehicleView when clicked
+                        NavigationLink(destination: MXLogVehicleView(vehicle: vehicle)) {
                             Text("\(vehicle.year ?? "Year") \(vehicle.make ?? "Make") \(vehicle.model ?? "Model")")
                         }
                     }
@@ -111,7 +111,7 @@ struct MXLogView: View {
             let vehicle = vehicleVM.vehiclesList[index]
             vehicleVM.deleteVehicle(vehicle)
         }
-        vehicleVM.fetchVehicles() // Refresh the list
+        vehicleVM.fetchVehicles()
     }
 }
 

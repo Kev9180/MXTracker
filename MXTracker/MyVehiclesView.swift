@@ -37,6 +37,7 @@ struct MyVehiclesView: View {
             //Vehicles List
             List {
                 
+                //If there are no vehicles in the list, alert the user to add a vehicle
                 if vehicleVM.vehiclesList.count == 0 {
                     Text("There are no vehicles in your list. Add one now to get started!")
                         .font(.system(size: 24))
@@ -99,9 +100,8 @@ struct MyVehiclesView: View {
             let vehicle = vehicleVM.vehiclesList[index]
             vehicleVM.deleteVehicle(vehicle)
         }
-        vehicleVM.fetchVehicles() // Refresh the list
+        vehicleVM.fetchVehicles() //Refresh the vehiclesList
     }
-
 }
 
 #Preview {

@@ -10,6 +10,7 @@ import SwiftUI
 struct MXLogVehicleView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var vehicle: UserVehicle?
+    @ObservedObject var recordVM = RecordViewModel()
 
     //Main view that handles the logic for displaying the UI elements for each vehicle's maintenance records
     var body: some View {
@@ -43,14 +44,19 @@ struct MXLogVehicleView: View {
             
             //Display the records for this vehicle
             List {
-                // Check if there are any maintenance records
+                //Check if the vehicle has any maintenance records that have been added
                 if let maintenanceRecords = vehicle?.maintenanceRecords as? Set<MaintenanceRecord>, !maintenanceRecords.isEmpty {
-                    // Convert NSSet to Array and display each maintenance record
+                    //Convert the set of records to an array and then display each of the records
                     ForEach(Array(maintenanceRecords), id: \.id) { record in
-                        // Display the maintenance record details
-                        // Replace 'recordDetails' with actual properties you want to display
-                        Text("Record Details: \(record.workPerformed ?? "")")
+                        NavigationLink(destination: MXRecordDetailView()) {
+                            HStack {
+                                Text("\(record.dateCompleted ?? "")")
+                                Spacer()
+                                Text("\(record.logTitle ?? "")")
+                            }
+                        }
                     }
+                    .onDelete(perform: deleteRecord)
                 } else {
                     Text("No maintenance records found for this vehicle! Add one now to get started!")
                         .font(.system(size: 24))
@@ -62,8 +68,6 @@ struct MXLogVehicleView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-
-
             
             Spacer()
             
@@ -71,7 +75,6 @@ struct MXLogVehicleView: View {
             NavigationLink {
                 //Take the user to the AddNewMXRecordView
                 AddNewMXRecordView(vehicle: $vehicle)
-                
             } label: {
                 HStack {
                     Image(systemName: "plus.circle")
@@ -101,6 +104,21 @@ struct MXLogVehicleView: View {
             }
         )
     }
+    
+    //Function that calculates the index of the vehicle and then calls the deleteVehicle function in VehicleViewModel to delete the vehicle
+    func deleteRecord(at offsets: IndexSet) {
+        if let maintenanceRecords = vehicle?.maintenanceRecords as? Set<MaintenanceRecord> {
+            let recordsArray = Array(maintenanceRecords)
+
+            for index in offsets {
+                let recordToDelete = recordsArray[index]
+                recordVM.deleteRecord(recordToDelete)
+            }
+
+            vehicle?.removeFromMaintenanceRecords(recordsArray[offsets.first!])
+        }
+    }
+
 }
 
 #Preview {

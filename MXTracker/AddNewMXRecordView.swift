@@ -119,6 +119,7 @@ struct AddNewMXRecordView: View {
             
             //Add New Record Button
             Button {
+                
                 // Create a new vehicle maintenance record using RecordModel
                 let record = recordModel.addNewRecord(
                     dateCompleted: dateCompleted,

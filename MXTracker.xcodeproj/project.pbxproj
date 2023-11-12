@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705EBB72AE60DD200221AFD /* BindingExtension.swift */; };
+		773601C22B006ECB00FE1041 /* MXRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */; };
 		7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */; };
 		7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C3F62AE1A6EF005AD46D /* ContentView.swift */; };
 		7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7762C3F82AE1A6F0005AD46D /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		7705EBB72AE60DD200221AFD /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
+		773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXRecordDetailView.swift; sourceTree = "<group>"; };
 		7762C3F12AE1A6EF005AD46D /* MXTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXTrackerApp.swift; sourceTree = "<group>"; };
 		7762C3F62AE1A6EF005AD46D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				7762C40D2AE1B569005AD46D /* VehicleViewModel.swift */,
 				7762C41D2AE34211005AD46D /* MXLogView.swift */,
 				7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */,
+				773601C12B006ECB00FE1041 /* MXRecordDetailView.swift */,
 				7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */,
 				7762C4232AE37CDA005AD46D /* MapView.swift */,
 				77BF58B42AE46C0C0031EF59 /* LocationManager.swift */,
@@ -201,6 +204,7 @@
 				7762C4162AE2257C005AD46D /* RecordModel.swift in Sources */,
 				77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */,
 				7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */,
+				773601C22B006ECB00FE1041 /* MXRecordDetailView.swift in Sources */,
 				7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */,
 				7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */,
 				7762C4242AE37CDA005AD46D /* MapView.swift in Sources */,

@@ -57,13 +57,13 @@ class VehicleViewModel: ObservableObject {
         }
     }
     
-    // Function to delete a UserVehicle
+    //Function to delete a previously-added UserVehicle entity
     func deleteVehicle(_ vehicle: UserVehicle) {
         viewContext.delete(vehicle)
 
         do {
             try viewContext.save()
-            // Remove the vehicle from the vehiclesList
+            
             DispatchQueue.main.async {
                 self.vehiclesList.removeAll { $0 == vehicle }
             }
