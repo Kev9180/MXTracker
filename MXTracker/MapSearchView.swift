@@ -55,6 +55,11 @@ struct MapSearchView: View {
         
         //Show the sheet if there is no currently selected location
         .onChange(of: selectedLocation) {
+            if let selectedLocation {
+                Task {
+                    scene = try? await fetchScene(for: selectedLocation.location)
+                }
+            }
             isSheetPresented = selectedLocation == nil
         }
         
