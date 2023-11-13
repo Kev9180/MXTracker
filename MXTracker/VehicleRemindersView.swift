@@ -48,7 +48,7 @@ struct VehicleRemindersView: View {
                 if let vehicleReminders = vehicle?.vehicleReminders as? Set<VehicleReminder>, !vehicleReminders.isEmpty {
                     //Convert the set of reminders to an array and then display each of the records
                     ForEach(Array(vehicleReminders), id: \.id) { reminder in
-                        NavigationLink(destination: ReminderDetailsView()) {
+                        NavigationLink(destination: ReminderDetailsView(vehicle: vehicle, reminder: reminder)) {
                             HStack {
                                 Text("\(reminder.reminderTitle ?? "")")
                                     .fontWeight(.semibold)

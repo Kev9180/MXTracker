@@ -31,8 +31,11 @@
 		7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C41D2AE34211005AD46D /* MXLogView.swift */; };
 		7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */; };
 		7762C4222AE35B22005AD46D /* AddNewMXRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */; };
-		7762C4242AE37CDA005AD46D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762C4232AE37CDA005AD46D /* MapView.swift */; };
-		77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF58B42AE46C0C0031EF59 /* LocationManager.swift */; };
+		779BAE1C2B017516008F2210 /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE1B2B017516008F2210 /* MapSearchView.swift */; };
+		779BAE1E2B01755D008F2210 /* MapSearchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE1D2B01755D008F2210 /* MapSearchSheetView.swift */; };
+		779BAE202B0175A3008F2210 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE1F2B0175A3008F2210 /* LocationService.swift */; };
+		779BAE222B01A1E5008F2210 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE212B01A1E5008F2210 /* LocationManager.swift */; };
+		779BAE252B01A711008F2210 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779BAE242B01A711008F2210 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +64,11 @@
 		7762C41D2AE34211005AD46D /* MXLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXLogView.swift; sourceTree = "<group>"; };
 		7762C41F2AE3444D005AD46D /* MXLogVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXLogVehicleView.swift; sourceTree = "<group>"; };
 		7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMXRecordView.swift; sourceTree = "<group>"; };
-		7762C4232AE37CDA005AD46D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		77BF58B42AE46C0C0031EF59 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		779BAE1B2B017516008F2210 /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
+		779BAE1D2B01755D008F2210 /* MapSearchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchSheetView.swift; sourceTree = "<group>"; };
+		779BAE1F2B0175A3008F2210 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		779BAE212B01A1E5008F2210 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		779BAE242B01A711008F2210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		7762C3F32AE1A6EF005AD46D /* MXTracker */ = {
 			isa = PBXGroup;
 			children = (
+				779BAE242B01A711008F2210 /* Info.plist */,
 				7762C3F42AE1A6EF005AD46D /* MXTrackerApp.swift */,
 				7762C3F62AE1A6EF005AD46D /* ContentView.swift */,
 				7762C4092AE1B40F005AD46D /* MyVehiclesView.swift */,
@@ -108,8 +115,10 @@
 				7762C4212AE35B22005AD46D /* AddNewMXRecordView.swift */,
 				7762C4152AE2257C005AD46D /* RecordModel.swift */,
 				7762C4192AE225BE005AD46D /* RecordViewModel.swift */,
-				7762C4232AE37CDA005AD46D /* MapView.swift */,
-				77BF58B42AE46C0C0031EF59 /* LocationManager.swift */,
+				779BAE1B2B017516008F2210 /* MapSearchView.swift */,
+				779BAE1D2B01755D008F2210 /* MapSearchSheetView.swift */,
+				779BAE212B01A1E5008F2210 /* LocationManager.swift */,
+				779BAE1F2B0175A3008F2210 /* LocationService.swift */,
 				773601C32B007F3600FE1041 /* MyRemindersView.swift */,
 				773601C52B00826E00FE1041 /* VehicleRemindersView.swift */,
 				773601C92B00865600FE1041 /* ReminderDetailsView.swift */,
@@ -193,6 +202,7 @@
 			files = (
 				7762C3FC2AE1A6F0005AD46D /* Preview Assets.xcassets in Resources */,
 				7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */,
+				779BAE252B01A711008F2210 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,21 +220,23 @@
 				7762C3FE2AE1A6F0005AD46D /* Persistence.swift in Sources */,
 				7762C40A2AE1B40F005AD46D /* MyVehiclesView.swift in Sources */,
 				773601C82B0085A700FE1041 /* AddNewReminderView.swift in Sources */,
+				779BAE202B0175A3008F2210 /* LocationService.swift in Sources */,
 				773601C42B007F3600FE1041 /* MyRemindersView.swift in Sources */,
 				7705EBB82AE60DD200221AFD /* BindingExtension.swift in Sources */,
+				779BAE1C2B017516008F2210 /* MapSearchView.swift in Sources */,
 				7762C3F72AE1A6EF005AD46D /* ContentView.swift in Sources */,
+				779BAE222B01A1E5008F2210 /* LocationManager.swift in Sources */,
 				7762C4182AE2259C005AD46D /* ReminderModel.swift in Sources */,
 				7762C40E2AE1B569005AD46D /* VehicleViewModel.swift in Sources */,
 				7762C4162AE2257C005AD46D /* RecordModel.swift in Sources */,
-				77BF58B52AE46C0C0031EF59 /* LocationManager.swift in Sources */,
 				7762C41E2AE34211005AD46D /* MXLogView.swift in Sources */,
 				773601C22B006ECB00FE1041 /* MXRecordDetailView.swift in Sources */,
 				773601C62B00826E00FE1041 /* VehicleRemindersView.swift in Sources */,
 				7762C3F52AE1A6EF005AD46D /* MXTrackerApp.swift in Sources */,
 				7762C4202AE3444D005AD46D /* MXLogVehicleView.swift in Sources */,
 				773601CA2B00865600FE1041 /* ReminderDetailsView.swift in Sources */,
-				7762C4242AE37CDA005AD46D /* MapView.swift in Sources */,
 				7762C4012AE1A6F0005AD46D /* MXTracker.xcdatamodeld in Sources */,
+				779BAE1E2B01755D008F2210 /* MapSearchSheetView.swift in Sources */,
 				7762C4102AE1BA80005AD46D /* AddNewVehicleView.swift in Sources */,
 				7762C4222AE35B22005AD46D /* AddNewMXRecordView.swift in Sources */,
 			);
@@ -362,6 +374,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MXTracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MXTracker/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for locating nearby automotive parts stores.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -391,6 +404,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MXTracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MXTracker/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for locating nearby automotive parts stores.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -144,7 +144,7 @@ struct ContentView: View {
                         
                         //Parts Stores button
                         NavigationLink {
-                            MapView(locationDataManager: LocationDataManager())
+                            MapSearchView()
                         } label: {
                             ZStack {
                                 Rectangle()
