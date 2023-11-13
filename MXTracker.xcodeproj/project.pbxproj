@@ -35,7 +35,6 @@
 		779BAE1E2B01755D008F2210 /* MapSearchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE1D2B01755D008F2210 /* MapSearchSheetView.swift */; };
 		779BAE202B0175A3008F2210 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE1F2B0175A3008F2210 /* LocationService.swift */; };
 		779BAE222B01A1E5008F2210 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BAE212B01A1E5008F2210 /* LocationManager.swift */; };
-		779BAE252B01A711008F2210 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779BAE242B01A711008F2210 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -202,7 +201,6 @@
 			files = (
 				7762C3FC2AE1A6F0005AD46D /* Preview Assets.xcassets in Resources */,
 				7762C3F92AE1A6F0005AD46D /* Assets.xcassets in Resources */,
-				779BAE252B01A711008F2210 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
