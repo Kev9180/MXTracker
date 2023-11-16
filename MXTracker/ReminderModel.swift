@@ -7,17 +7,7 @@
 
 import Foundation
 
-//Define the VehicleReminder struct
-//struct VehicleReminder: Identifiable {
-//    var id = UUID()
-//    var reminderTitle = String()
-//    var dateComplted = String()
-//    var serviceInterval = String()
-//    var nextServiceDue = Date()
-//    var pushNotificationsEnabled = Bool()
-//}
-
-//
+//Define the ReminderModel class
 class ReminderModel {
     
     let viewContext = PersistenceController.shared.container.viewContext

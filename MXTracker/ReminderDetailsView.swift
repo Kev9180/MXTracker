@@ -54,8 +54,10 @@ struct ReminderDetailsView: View {
             
             Spacer()
             
-            //Display the vehicle details
+            //Display the vehicle reminder details
             List {
+                
+                //HStack to hold the reminder title display
                 HStack {
                     Text("Reminder Title:")
                         .frame(alignment: .leading)
@@ -65,6 +67,8 @@ struct ReminderDetailsView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the date last completed display
                 HStack {
                     Text("Date Last Completed:")
                         .frame(alignment: .leading)
@@ -74,6 +78,8 @@ struct ReminderDetailsView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the service interval display
                 HStack {
                     Text("Service Interval:")
                         .frame(alignment: .leading)
@@ -83,6 +89,8 @@ struct ReminderDetailsView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the next service due display
                 HStack {
                     Text("Next Service Due:")
                         .frame(alignment: .leading)
@@ -92,6 +100,8 @@ struct ReminderDetailsView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the push notifications enabled display
                 HStack {
                     Text("Push Notifications Enabled?")
                         .frame(alignment: .leading)

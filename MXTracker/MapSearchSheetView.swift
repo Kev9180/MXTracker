@@ -63,7 +63,7 @@ struct MapSearchSheetView: View {
         .presentationBackgroundInteraction(.enabled(upThrough: .large))
     }
     
-    private func didTapOnCompletion(_ completion: SearchCompletions) {
+    private func didTapOnCompletion(_ completion: LocationInformation) {
         Task {
             if let singleLocation = try? await locationService.search(with: "\(completion.title) \(completion.subTitle)").first {
                 searchResults = [singleLocation]

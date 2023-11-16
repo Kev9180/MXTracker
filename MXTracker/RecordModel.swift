@@ -7,7 +7,7 @@
 
 import Foundation
 
-//
+//RecordModel class
 class RecordModel {
     let viewContext = PersistenceController.shared.container.viewContext
     

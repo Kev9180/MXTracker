@@ -44,8 +44,10 @@ struct MXLogVehicleView: View {
             
             //Display the records for this vehicle
             List {
+                
                 //Check if the vehicle has any maintenance records that have been added
                 if let maintenanceRecords = vehicle?.maintenanceRecords as? Set<MaintenanceRecord>, !maintenanceRecords.isEmpty {
+                    
                     //Convert the set of records to an array and then display each of the records
                     ForEach(Array(maintenanceRecords), id: \.id) { record in
                         NavigationLink(destination: MXRecordDetailView(vehicle: vehicle, record: record)) {

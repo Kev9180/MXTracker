@@ -44,8 +44,10 @@ struct VehicleRemindersView: View {
             
             //Display the records for this vehicle
             List {
+                
                 //Check if the vehicle has any active reminders that have been added
                 if let vehicleReminders = vehicle?.vehicleReminders as? Set<VehicleReminder>, !vehicleReminders.isEmpty {
+                    
                     //Convert the set of reminders to an array and then display each of the records
                     ForEach(Array(vehicleReminders), id: \.id) { reminder in
                         NavigationLink(destination: ReminderDetailsView(vehicle: vehicle, reminder: reminder)) {
@@ -73,7 +75,7 @@ struct VehicleRemindersView: View {
             
             Spacer()
             
-            //Add New Record Button
+            //Add New Reminder Button
             NavigationLink {
                 //Take the user to the AddNewReminderView
                 AddNewReminderView(vehicle: $vehicle)

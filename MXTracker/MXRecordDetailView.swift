@@ -56,6 +56,8 @@ struct MXRecordDetailView: View {
             
             //Display the vehicle details
             List {
+                
+                //HStack to hold the date completed display
                 HStack {
                     Text("Date Completed:")
                         .frame(alignment: .leading)
@@ -65,6 +67,8 @@ struct MXRecordDetailView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the mileage completed display
                 HStack {
                     Text("Mileage Completed:")
                         .frame(alignment: .leading)
@@ -74,6 +78,8 @@ struct MXRecordDetailView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the service interval display
                 HStack {
                     Text("Service Interval:")
                         .frame(alignment: .leading)
@@ -83,6 +89,8 @@ struct MXRecordDetailView: View {
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
+                
+                //HStack to hold the work performed display
                 HStack {
                     Text("Work Performed:")
                         .frame(alignment: .topLeading)

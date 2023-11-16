@@ -52,6 +52,7 @@ public class ReminderViewModel: ObservableObject {
         return dateFormatter.date(from: dateString)
     }
 
+    //Function to calculate the next service due date
     func calculateNextServiceDueDate(from date: Date, intervalMonths: Int) -> Date {
         return Calendar.current.date(byAdding: .month, value: intervalMonths, to: date) ?? date
     }

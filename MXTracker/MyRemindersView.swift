@@ -49,6 +49,7 @@ struct MyRemindersView: View {
             //Vehicles List
             List {
                 
+                //If there are no vehicles in the list, alert the user to add a vehicle
                 if vehicleVM.vehiclesList.count == 0 {
                     Text("There are no vehicles in your list. Add one now to get started!")
                         .font(.system(size: 24))
@@ -60,7 +61,7 @@ struct MyRemindersView: View {
                     //Iterate through each of the vehicles in the list
                     ForEach(vehicleVM.vehiclesList, id: \.id) {vehicle in
                         
-                        //Create a navigationlink for each vehicle that will go to the MXLogVehicleView when clicked
+                        //Create a navigationlink for each vehicle that will go to the VehicleRemindersView when clicked
                         NavigationLink(destination: VehicleRemindersView(vehicle: vehicle)) {
                             Text("\(vehicle.year ?? "Year") \(vehicle.make ?? "Make") \(vehicle.model ?? "Model")")
                         }
