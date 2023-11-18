@@ -16,6 +16,7 @@ struct MapSearchView: View {
     @State private var isSheetPresented: Bool = true
     @State private var userLocation: CLLocationCoordinate2D?
     @State private var scene: MKLookAroundScene?
+    @State private var customDetent: PresentationDetent = .height(400)
     private var locationManager = CLLocationManager()
     
     //Initialize the location manager to get the user's location
@@ -72,8 +73,14 @@ struct MapSearchView: View {
         
         //Display the MapSearchSheetView to show the found locations and allow the user to search for locations
         .sheet(isPresented: $isSheetPresented) {
-            MapSearchSheetView(searchResults: $searchResults)
+            MapSearchSheetView(searchResults: $searchResults, onSelect: { selectedResult in
+                // Here you set the selected location
+                self.selectedLocation = selectedResult
+                // Optionally, dismiss the sheet if required
+                self.isSheetPresented = false
+            })
         }
+
     }
     
     //Fetch the scene for the lookaround preview

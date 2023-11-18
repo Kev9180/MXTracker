@@ -13,6 +13,8 @@ struct MapSearchSheetView: View {
     @State private var locationService = LocationService(completer: .init())
     @State private var search: String = ""
     @Binding var searchResults: [SearchResult]
+    
+    var onSelect: (SearchResult) -> Void
 
     //Main view responsisible for the logic and display of the UI elements
     var body: some View {
@@ -38,7 +40,9 @@ struct MapSearchSheetView: View {
                 
                 //Iterate through the list of matching results and display them
                 ForEach(locationService.completions) { completion in
-                    Button(action: { }) {
+                    Button(action: {
+                        didTapOnCompletion(completion)
+                    }) {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(completion.title)
                                 .font(.headline)
@@ -72,10 +76,11 @@ struct MapSearchSheetView: View {
     private func didTapOnCompletion(_ completion: LocationInformation) {
         Task {
             if let singleLocation = try? await locationService.search(with: "\(completion.title) \(completion.subTitle)").first {
-                searchResults = [singleLocation]
+                onSelect(singleLocation) // Use the onSelect closure here
             }
         }
     }
+
 }
 
 //Struct modifier for the search bar

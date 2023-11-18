@@ -21,7 +21,7 @@ struct AddNewVehicleView: View {
     var vehicleModel = VehicleModel()
     
     //Define a string array for the vehicle year dropdown
-    let years = (1950...2023).map { "\($0)" }.reversed()
+    let years = (1981...2023).map { "\($0)" }.reversed()
     
     //Define an array of vehicle makes for the user to choose from. Makes array is only applicable in this view, so defining here instead of in VehicleViewModel
     let makes = ["AMC","Acura","Alfa Romeo","Aston Martin","Audi","BMW","Bentley","Bugatti", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Daewoo", "Datsun", "DeLorean", "Dodge", "Eagle", "FIAT", "Ferrari", "Fisker", "Ford", "Freightliner", "GMC", "Genesis", "Geo", "HUMMER", "Honda", "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Karma", "Kia", "Lamborghini", "Land Rover", "Lexus", "Lincoln", "Lotus", "Lucid", "Mazda", "MINI", "Maserati", "Maybach", "McLaren", "Mercedes-Benz", "Mercury", "Mitsubishi", "Nissan", "Oldsmobile", "Plymouth", "Polestar", "Pontiac", "Porsche", "RAM", "Rivian", "Rolls-Royce", "SRT", "Saab", "Saturn", "Scion", "Smart", "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo", "Yugo"]
@@ -111,7 +111,7 @@ struct AddNewVehicleView: View {
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 150)
                         .multilineTextAlignment(.trailing)
-                        .disabled(selectedTrim == nil)
+                        .disabled(selectedModel == nil)
                 }
 
                 //Cylinders Picker
@@ -121,16 +121,17 @@ struct AddNewVehicleView: View {
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .disabled(selectedDisplacement == nil)
+                .disabled(selectedModel == nil)
 
                 //Drive Picker
-                Picker("Drive:", selection: Binding($selectedDrive, updateNilValueWith: driveOptions.first ?? "")) {
+                Picker("Drive:", selection: $selectedDrive) {
+                    Text("Select a Drive").tag(nil as String?)
                     ForEach(driveOptions, id: \.self) { drive in
-                        Text(drive).tag(drive)
+                        Text(drive).tag(drive as String?)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .disabled(selectedCylinders == nil)
+                .disabled(selectedModel == nil)
             }
             //On change of selectedMake, make the API call to get the applicable models for the year and make that are selected
             .onChange(of: selectedMake) {
@@ -174,7 +175,7 @@ struct AddNewVehicleView: View {
             .foregroundColor(.white)
             .cornerRadius(20)
             .shadow(color: Color("MXPurple"), radius: 5, y: 5)
-            .disabled(selectedYear == nil || selectedMake == nil || selectedModel == nil || selectedTrim == nil || selectedDisplacement == nil || selectedCylinders == nil || selectedDrive == nil)
+            .disabled(selectedYear == nil || selectedMake == nil || selectedModel == nil)
             
             Spacer()
         }
