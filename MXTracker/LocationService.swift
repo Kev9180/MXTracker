@@ -32,8 +32,7 @@ struct SearchResult: Identifiable, Hashable {
 }
 
 //Observable oject class that will handle the user searches
-@Observable
-class LocationService: NSObject, MKLocalSearchCompleterDelegate{
+class LocationService: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     private let completer: MKLocalSearchCompleter
     
     //Array to hold the places returned from the search
