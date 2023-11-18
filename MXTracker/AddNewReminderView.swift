@@ -20,7 +20,7 @@ struct AddNewReminderView: View {
     @State var nextServiceDue: Date = Date()
     @State var nextServiceDueText: String = ""
     @State var pushNotificationsEnabled = false
-    @StateObject var reminderVM = ReminderViewModel()
+    @ObservedObject var reminderVM = ReminderViewModel()
     var reminderModel = ReminderModel()
 
     //Main view that handles the logic for the UI elements required to add a new vehicle reminder
