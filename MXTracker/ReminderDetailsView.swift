@@ -96,7 +96,7 @@ struct ReminderDetailsView: View {
                         .frame(alignment: .leading)
                         .fontWeight(.semibold)
                     Spacer()
-                    Text("\(reminder?.nextServiceDue?.formatted() ?? "")")
+                    Text(reminder?.nextServiceDue?.formatted(date: .abbreviated, time: .omitted) ?? "")
                         .foregroundStyle(Color("MXBlue"))
                         .frame(alignment: .trailing)
                 }
