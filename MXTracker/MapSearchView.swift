@@ -61,6 +61,7 @@ struct MapSearchView: View {
                     scene = try? await fetchScene(for: selectedLocation.location)
                 }
             }
+            
             isSheetPresented = selectedLocation == nil
         }
         
@@ -74,9 +75,7 @@ struct MapSearchView: View {
         //Display the MapSearchSheetView to show the found locations and allow the user to search for locations
         .sheet(isPresented: $isSheetPresented) {
             MapSearchSheetView(searchResults: $searchResults, onSelect: { selectedResult in
-                // Here you set the selected location
                 self.selectedLocation = selectedResult
-                // Optionally, dismiss the sheet if required
                 self.isSheetPresented = false
             })
         }
