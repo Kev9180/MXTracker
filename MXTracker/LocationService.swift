@@ -17,8 +17,10 @@ struct LocationInformation: Identifiable {
 
 //Struct to hold the result of the search
 struct SearchResult: Identifiable, Hashable {
-    let id = UUID() //Unique ID for each search result
-    let location: CLLocationCoordinate2D    //Unique location coordinates for each search result
+    let id = UUID()
+    let location: CLLocationCoordinate2D
+    let name: String
+    let address: String
 
     //Check if two search results are the same to avoid displaying duplicate search results
     static func == (lhs: SearchResult, rhs: SearchResult) -> Bool {
@@ -78,8 +80,10 @@ struct SearchResult: Identifiable, Hashable {
 
         return response.mapItems.compactMap { mapItem in
             guard let location = mapItem.placemark.location?.coordinate else { return nil }
-
-            return .init(location: location)
+            let name = mapItem.name ?? "Unknown" // You can adjust the default values
+            let address = mapItem.placemark.title ?? "No Address"
+            
+            return SearchResult(location: location, name: name, address: address)
         }
     }
 }

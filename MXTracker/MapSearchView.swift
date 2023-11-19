@@ -44,13 +44,23 @@ struct MapSearchView: View {
         
         //Overlay to handle the look around preview feature offered in iOS 17
         .overlay(alignment: .bottom) {
-           if selectedLocation != nil {
-               LookAroundPreview(scene: $scene, allowsNavigation: false, badgePosition: .bottomTrailing)
-                   .frame(height: 150)
-                   .clipShape(RoundedRectangle(cornerRadius: 12))
-                   .safeAreaPadding(.bottom, 40)
-                   .padding(.horizontal, 20)
-           }
+            if let selectedLocation = selectedLocation {
+                VStack {
+                    Text("\(selectedLocation.name)\n\(selectedLocation.address)")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .background(Color.black.opacity(0.5))
+                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                    LookAroundPreview(scene: $scene, allowsNavigation: false, badgePosition: .bottomTrailing)
+                        .frame(height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .safeAreaPadding(.bottom, 40)
+                        .padding(.horizontal, 20)
+                }
+            }
         }
         .ignoresSafeArea()
         
@@ -74,18 +84,30 @@ struct MapSearchView: View {
         
         //Display the MapSearchSheetView to show the found locations and allow the user to search for locations
         .sheet(isPresented: $isSheetPresented) {
-            MapSearchSheetView(searchResults: $searchResults, onSelect: { selectedResult in
+            MapSearchSheetView(searchResults: $searchResults, mapPosition: $position, onSelect: { selectedResult in
                 self.selectedLocation = selectedResult
                 self.isSheetPresented = false
             })
         }
-
     }
     
     //Fetch the scene for the lookaround preview
     private func fetchScene(for coordinate: CLLocationCoordinate2D) async throws -> MKLookAroundScene? {
         let lookAroundScene = MKLookAroundSceneRequest(coordinate: coordinate)
         return try await lookAroundScene.scene
+    }
+}
+
+//Struct for visual effect blue to be used for displaying store information above the look-around preview
+struct VisualEffectBlur: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: effect)
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = effect
     }
 }
 

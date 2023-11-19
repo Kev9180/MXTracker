@@ -13,6 +13,7 @@ struct MapSearchSheetView: View {
     @State private var locationService = LocationService(completer: .init())
     @State private var search: String = ""
     @Binding var searchResults: [SearchResult]
+    @Binding var mapPosition: MapCameraPosition
     
     var onSelect: (SearchResult) -> Void
 
@@ -73,14 +74,19 @@ struct MapSearchSheetView: View {
         .presentationBackgroundInteraction(.enabled(upThrough: .large))
     }
     
+    //Function to update search results
     private func didTapOnCompletion(_ completion: LocationInformation) {
         Task {
             if let singleLocation = try? await locationService.search(with: "\(completion.title) \(completion.subTitle)").first {
-                onSelect(singleLocation) // Use the onSelect closure here
+                onSelect(singleLocation)
+                
+                // Update the searchResults in MapSearchView
+                DispatchQueue.main.async {
+                    self.searchResults = [singleLocation]
+                }
             }
         }
     }
-
 }
 
 //Struct modifier for the search bar
