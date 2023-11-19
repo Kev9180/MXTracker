@@ -136,7 +136,7 @@ struct ContentView: View {
                     
                     //VStack to hold the Parts Stores text and button
                     VStack {
-                        Text("Parts Stores")
+                        Text("Map")
                             .foregroundStyle(Color("MXGreen"))
                             .font(.title3)
                             .fontWeight(.semibold)

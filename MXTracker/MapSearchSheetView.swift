@@ -23,7 +23,7 @@ struct MapSearchSheetView: View {
             //HStack to hold the search bar
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Automotive Parts Stores", text: $search)
+                TextField("Auto Parts Stores", text: $search)
                     .autocorrectionDisabled()
                     .onSubmit {
                         Task {
